@@ -29,7 +29,7 @@ export function getAppChanges(){
         switch (app.status) { // toLoad
             case NOT_LOADED: 
             case LOADING_SOURCE_CODE:
-                if(appSholdBeActive){// 做判断了
+                if(appSholdBeActive){
                     appsToLoad.push(app);
                 }
                 break

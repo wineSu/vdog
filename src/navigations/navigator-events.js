@@ -48,11 +48,5 @@ function patchedUpdateState(updateState,methodName){
     }
 }
 
-
 window.history.pushState = patchedUpdateState(window.history.pushState,'pushState');
 window.history.replaceState = patchedUpdateState(window.history.replaceState,'replaceState');
-
-// 用户可能还会绑定自己的路由事件 vue
-
-
-// 当我们应用切换后，还需要处理原来的方法，需要在应用切换后在执行

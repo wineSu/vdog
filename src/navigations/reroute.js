@@ -7,7 +7,6 @@ import { toMountPromise } from "../lifecycles/mount";
 
 import './navigator-events'
 
-
 // 核心应用处理方法
 export function reroute() {
     //  需要获取要加载的应用
@@ -43,6 +42,3 @@ export function reroute() {
         });
     }   
 }
-
-// 这个流程是用于初始化操作的，我们还需要 当路径切换时重新加载应用
-// 重写路由相关的方法

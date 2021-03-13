@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>vdog</title>
 </head>
 
 <body>
-    <a onclick="a()">应用1</a>
-    <a onclick="b()">应用2</a>
+    <a onclick="a()">app1</a>
+    <a onclick="b()">app2</a>
     <script src="/lib/umd/single-spa.js"></script>
     <script>
 
@@ -37,8 +37,12 @@
                     }
                 }
             },
-            location=>location.pathname.startsWith('/a'), // 根据路径来判断是否应该加载
-            {store:{name:'zf',age:10}}
+            location => location.pathname.startsWith('/a'),
+            {
+                store:{
+                    data: 'for app1'
+                }
+            }
         );
         singleSpa.registerApplication('app2',
             async (props) => {
@@ -56,12 +60,16 @@
                     }
                 }
             },
-            location=>location.pathname.startsWith('/b'), // 根据路径来判断是否应该加载
-            {store:{name:'zf',age:10}}
+            location => location.pathname.startsWith('/b'),
+            {
+                store:{
+                    data: 'for app2'
+                }
+            }
         );
-        singleSpa.start(); // 启动这个应用
-        // registerApplication 默认会加载应用
-        // start时会挂载应用
+
+         // 启动应用
+        singleSpa.start();
     </script>
 </body>
 
